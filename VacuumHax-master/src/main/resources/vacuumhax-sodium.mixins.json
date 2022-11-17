@@ -1,0 +1,15 @@
+{
+  "required": false,
+  "package": vacuumhax.client.mixin.sodium",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "vacuumhax.client.MixinPlugin",
+  "client": [
+    "BlockOcclusionCacheMixin",
+    "BlockRendererMixin",
+    "FluidRendererMixin",
+    "LightDataAccessMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

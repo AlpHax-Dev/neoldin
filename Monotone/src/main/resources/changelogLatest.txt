@@ -1,0 +1,3 @@
+Major visual refactor
+Removed analytics
+Bug fixes

@@ -1,0 +1,67 @@
+plugins {
+  id 'java'
+}
+
+group 'dev.fiki.forgehax.javac'
+
+sourceSets {
+  templates {
+    compileClasspath += main.compileClasspath
+
+    // don't compile any java files
+    // there is probably a better way to do this... probably
+    java {
+      exclude '*'
+    }
+  }
+}
+
+ext {
+  unpackedLombok = file("$project.buildDir/lombok")
+}
+
+configurations {
+  lombok
+}
+
+dependencies {
+  lombok libs.lombok
+
+//  implementation group: 'org.kohsuke.metainf-services', name: 'metainf-services', version: '1.8'
+
+  implementation files(org.gradle.internal.jvm.Jvm.current().toolsJar)
+  implementation project(':Annotations')
+  implementation files(unpackedLombok)
+
+  testImplementation libs.bundles.jupiter
+  testImplementation libs.commonsio
+  testImplementation libs.testingcompile
+  testImplementation libs.ow2asm
+  testImplementation libs.assertj
+}
+
+task unpackLombok {
+  inputs.files configurations.lombok
+  outputs.dir unpackedLombok
+
+  doLast {
+    copy {
+      from zipTree(configurations.lombok.singleFile)
+      into unpackedLombok
+      include 'lombok/**/*'
+      rename "(.*)[.]SCL[.]lombok", '$1.class'
+      duplicatesStrategy DuplicatesStrategy.EXCLUDE
+    }
+  }
+}
+
+test {
+  dependsOn unpackLombok
+
+  environment 'BUILD_DIR', project.buildDir
+  environment 'TEMPLATES_DIR', sourceSets.templates.java.srcDirs[0].getAbsolutePath()
+  environment 'REMAPPER_FILE', file('src/test/resources/mappings').getAbsolutePath()
+  useJUnitPlatform()
+}
+
+tasks.compileJava.dependsOn unpackLombok

@@ -1,0 +1,16 @@
+modLoader="javafml"
+loaderVersion="@forgehax.forge.version@"
+issueTrackerURL="@forgehax.issue.tracker@"
+license='MIT'
+[[mods]]
+modId="forgehax"
+version="@forgehax.version@"
+displayName="ForgeHax"
+#updateJSONURL="@forgehax.update.url@"
+displayURL="@forgehax.url@"
+logoFile="@forgehax.logo.file@"
+credits="@forgehax.credits@"
+authors="@forgehax.authors@"
+description='''
+@forgehax.description@
+'''

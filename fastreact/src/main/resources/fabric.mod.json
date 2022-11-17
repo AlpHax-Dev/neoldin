@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "fastreact",
+  "version": "${version}",
+  "name": "Efastreact",
+  "description": "An addon template for the Meteor addons.",
+  "authors": [
+    "Choroalp"
+  ],
+  "contact": {
+    "repo": "https://github.com/MeteorDevelopment/meteor-addon-template"
+  },
+  "icon": "assets/e621/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "meteor": [
+      "choroalp.fastreact.E621Hud"
+    ]
+  },
+  "custom": {
+    "meteor-client:color": "247,195,164",
+    "github:sha": "@gh_hash@"
+  },
+  "depends": {
+    "java": ">=17",
+    "minecraft": ">=@mc_version@",
+    "meteor-client": "*"
+  }
+}
