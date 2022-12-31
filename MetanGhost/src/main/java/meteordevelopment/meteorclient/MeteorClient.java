@@ -70,7 +70,7 @@ public class MeteorClient implements ClientModInitializer {
             return;
         }
 
-        LOG.info("Initializing AlpHax");
+        LOG.info("Initializing Meteor Client");
 
         // Global minecraft client accessor
         mc = MinecraftClient.getInstance();
