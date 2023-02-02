@@ -1,4 +1,4 @@
-//go 1.19.4
+//go 1.19.5
 
 package main
 
@@ -17,7 +17,7 @@ func main() {
 
 	fmt.Print("Please enter the second numbers: ")
 	fmt.Scan(&y)
-	fmt.Println("Please Enter A Number. Symbols +,-,*,/ are for first four main equations. +!,-!,*!,/! are what if these numbers place is switched. Write AD To enable advenced Calculations")
+	fmt.Println("Please Enter A Number. Symbols +,-,*,/ are for first four main equations. +!,-!,*!,/! are what if these numbers place is switched. Write AD To enable advenced Calculations:")
 	fmt.Scan(&z)
 
 	var d, d1 int
@@ -30,6 +30,13 @@ func main() {
 
 	var sqcontrol int
 	var sq int
+	var trimode int
+	var triheight int
+	var tribase int
+	var triareax int
+	var triareay int
+
+	var tria, trib, tric int
 
 	a := x + y
 	b := x - y
@@ -65,7 +72,7 @@ func main() {
 		fmt.Println(d1)
 		fmt.Scan(&control)
 	case "AD":
-		fmt.Println("Please enter a mode. 1 to calculate the area of a square. 2 to calculate the perimeter of square. 3 to start rectangle mode ")
+		fmt.Println("Please enter a mode. 1 to calculate the area of a square. 2 to calculate the perimeter of square. 3 to start rectangle mode. 4 to start triangle mode ")
 		fmt.Scan(&sqcontrol)
 	default:
 		fmt.Println("İnvalid")
@@ -86,6 +93,9 @@ func main() {
 	case 3:
 		fmt.Println("Please Enter A mode. 1 to calculate the area of the rectangle. 2 to calculate the perimeter of a rectangle")
 		fmt.Scan(&recmode)
+	case 4:
+		fmt.Println("Please Enter A mode. 1 to calculate the area of the triangle. 2 to calculate the perimeter of a triangle")
+		fmt.Scan(&trimode)
 	default:
 		fmt.Println("İnvalid")
 	}
@@ -109,4 +119,27 @@ func main() {
 		fmt.Scan(&control)
 	}
 
+	switch trimode {
+	case 1:
+		fmt.Println("Please Enter the height of the triangle")
+		fmt.Scan(&triheight)
+		fmt.Println("Please Enter how long is the base of the triangle")
+		fmt.Scan(&tribase)
+
+		triareax = tribase * triheight
+		triareay = triareax / 2
+
+		fmt.Println(triareay)
+		fmt.Scan(&control)
+	case 2:
+		fmt.Println("Please Enter How Long a side of the triangle")
+		fmt.Scan(&tria)
+		fmt.Println("Please Enter How Long a side of the triangle")
+		fmt.Scan(&trib)
+		fmt.Println("Please Enter How Long a side of the triangle")
+		fmt.Scan(&tric)
+
+		fmt.Println(tria + trib + tric)
+		fmt.Scan(&control)
+	}
 }

@@ -9,6 +9,12 @@ int main()
   int recmode,recshort,reclong;
   int sqcontrol,sq;
 
+  int trimode;
+  int tribase,triheight;
+  int triareax;
+  int triareay;
+  int tria,trib,tric;
+
   cout<<"Please Enter A Number"<<endl;
   cin>>x;
   cout<<"Please Enter A Number"<<endl;
@@ -66,7 +72,7 @@ int main()
   }
 
   if (z == "AD"){
-    cout<<"Enter 1 to calculate the area of a square. 2 to calculato the perimeter of a square. 3 to enter Rectangle Mode"<<endl;
+    cout<<"Enter 1 to calculate the area of a square. 2 to calculato the perimeter of a square. 3 to enter Rectangle Mode.4 to enter triangle mode"<<endl;
     cin>>sqcontrol;
   }
 
@@ -88,11 +94,14 @@ int main()
   case 3:
     cout<<"Enter 1 to calculate the area of the rectangle 2 to calculate the perimeter of the rectangle"<<endl;
     cin>>recmode;
-    cin>>control;
+    break;
+  case 4:
+    cout<<"Enter 1 to calculate the area of the triangle. 2 to calculate the perimeter of the triangle"<<endl;
+    cin>>trimode;
     break;
   default:
-    cout<<"Unknown"<<endl;
-    cin>>contro;
+    cout<<"Unknown(Please ignore this if you are entering triangle mode or rectangle mode and write something randýom and hit enter)"<<endl;
+    cin>>control;
     break;
   }
 
@@ -104,7 +113,7 @@ int main()
     cin>>reclong;
 
     cout<<recshort * reclong<<endl;
-    cin>>control
+    cin>>control;
     break;
   case 2:
     cout<<"Please Enter How Long is the short side of the Rectangle"<<endl;
@@ -116,11 +125,41 @@ int main()
     cin>>control;
     break;
   default:
-    cout<<"Unknown"<<endl;
+    cout<<"Unknown(Please ignore this if you are entering triangle mode or rectangle mode and write something randýom and hit enter)"<<endl;
     cin>>control;
     break;
   }
 
+    switch (trimode) {
+      case 1:
+		
+		cout<<"Enter the how long is the base of the triangle"<<endl;
+        cin>>tribase;
+        cout<<"Enter the how long is the height of the triangle"<<endl;
+        cin>>triheight;
+        
+        triareax = tribase * triheight;
+        triareay = triareax / 2;
+
+        cout<<triareay;
+        cin>>control;
+        break;
+      case 2:
+        cout<<"Enter how long is the one of the sides of the triangle"<<endl;
+        cin>>tria;
+        cout<<"Enter how long is the one of the sides of the triangle"<<endl;
+        cin>>trib;
+        cout<<"Enter how long is the one of the sides of the triangle"<<endl;
+        cin>>tric;
+
+        cout<<tria + trib + tric;
+        cin>>control;
+        break;
+      default:
+          cout<<"Error is detected"<<endl;
+          cin>>control;
+          break;
+    }
 
   return 0;
 }

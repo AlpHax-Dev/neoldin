@@ -1,8 +1,0 @@
-plugins {
-  id 'java'
-}
-
-group 'dev.fiki.forgehax.api.asm'
-
-dependencies {
-}

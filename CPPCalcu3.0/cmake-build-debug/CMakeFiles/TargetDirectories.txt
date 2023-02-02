@@ -1,0 +1,3 @@
+C:/Users/User/Desktop/neoldin/CPPCalcu3.0/cmake-build-debug/CMakeFiles/CPPCalcu3_0.dir
+C:/Users/User/Desktop/neoldin/CPPCalcu3.0/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/User/Desktop/neoldin/CPPCalcu3.0/cmake-build-debug/CMakeFiles/rebuild_cache.dir
