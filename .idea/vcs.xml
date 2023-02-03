@@ -2,7 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/JavaCalc5.0" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ParityLauncher" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Scalable" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/pijdk" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/xarm" vcs="Git" />
   </component>
 </project>

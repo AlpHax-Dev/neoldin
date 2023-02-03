@@ -30,6 +30,8 @@ fn main() {
         }
     };
 
+    let mut geometry;
+
     println!("Please enter an operation: ");
 
     let mut operation_raw = String::new();
@@ -60,7 +62,18 @@ fn main() {
             }
         },
         "AD" => {
-
+                geometry = {
+                println!("Enter an integer: ");
+                let mut geometry_raw = String::new();
+                io::stdin().read_line(&mut geometry_raw).unwrap();
+                match geometry_raw.trim().parse::<i32>(){
+                    Ok(num) => num,
+                    Err(_) => {
+                        println!("Invalid input");
+                        return;
+                    }
+                }
+            };
         }
     }
 }
